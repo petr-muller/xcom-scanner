@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">XCOM Field Scanner</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_splash_screen">XCOM Field Scanner</string>
+    <string name="xcom_field_scanner">XCOM Field Scanner</string>
+    <string name="splash_screen_containing_xcom_logo">Splash screen containing XCOM logo</string>
+    <string name="splash_message_1_kernel_initialization">Inicializace jádra: XCOM-3.1.42b</string>
+    <string name="splash_message_2_key_verification">Verifikace přístupového klíče</string>
+    <string name="splash_message_3_sensor_calibration">Kalibrace senzorových polí</string>
+    <string name="splash_message_4_nsa_notification">Notifikace NSA</string>
+    <string name="splash_message_5_facebook_scan">Scan FB profilu ředitele XCOM</string>
+
+</resources>
