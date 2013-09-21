@@ -15,7 +15,8 @@ public class SplashScreen extends Activity {
 									  R.string.splash_message_3_sensor_calibration,
 									  R.string.splash_message_4_nsa_notification,
 									  R.string.splash_message_5_facebook_scan };
-	private static int counter = 0;
+	private int counter = 0;
+	private Handler handler;
 	
 	private Runnable toggleMessageHandler = new Runnable() {
 		@Override
@@ -36,9 +37,9 @@ public class SplashScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash_screen);
-		
-		new Handler().postDelayed(toggleMessageHandler, SPLASH_MESSAGE_SWITCH);
-		new Handler().postDelayed(dotter, SPLASH_MESSAGE_DOT);
+		handler = new Handler();
+		handler.postDelayed(toggleMessageHandler, SPLASH_MESSAGE_SWITCH);
+		handler.postDelayed(dotter, SPLASH_MESSAGE_DOT);
 	}
 	
 	private void toggleMessage() {
@@ -46,8 +47,9 @@ public class SplashScreen extends Activity {
 		if (counter < messages.length) {
 			TextView tv = (TextView)findViewById(R.id.xcomSplashMessage);
 			tv.setText(messages[counter]);
-			new Handler().postDelayed(toggleMessageHandler, SPLASH_MESSAGE_SWITCH);
+			handler.postDelayed(toggleMessageHandler, SPLASH_MESSAGE_SWITCH);
 		} else {
+			counter = 0;
 			Intent i = new Intent(SplashScreen.this, HubActivity.class);
 			startActivity(i);
 			finish();
@@ -57,7 +59,7 @@ public class SplashScreen extends Activity {
 	private void dotMessage() {
 		TextView tv = (TextView)findViewById(R.id.xcomSplashMessage);
 		tv.setText("*" + tv.getText() + "*");
-		new Handler().postDelayed(dotter, SPLASH_MESSAGE_DOT);
+		handler.postDelayed(dotter, SPLASH_MESSAGE_DOT);
 	}
 
 	@Override
