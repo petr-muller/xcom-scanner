@@ -18,3 +18,7 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+# Graphics I do not want to distribute
+ic_launcher.png
+xcom_logo.png
