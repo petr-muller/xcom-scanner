@@ -3,6 +3,7 @@ package cz.larpy.xcom.fieldscanner_v3;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.app.Activity;
+import android.content.Intent;
 
 public class ScannerActionActivity extends Activity {
 
