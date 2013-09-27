@@ -17,7 +17,6 @@
             android:name="cz.larpy.xcom.fieldscanner_v3.HubActivity"
             android:label="@string/app_name" >
         </activity>
-
         <activity
             android:name="cz.larpy.xcom.fieldscanner_v3.SplashScreen"
             android:label="@string/title_activity_splash_screen"
@@ -25,8 +24,17 @@
             android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerActionActivity"
+            android:label="@string/title_activity_scanner_action"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
         </activity>
     </application>
 

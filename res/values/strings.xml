@@ -13,4 +13,6 @@
     <string name="splash_message_4_nsa_notification">Notifikace NSA</string>
     <string name="splash_message_5_facebook_scan">Scan FB profilu ředitele XCOM</string>
 
+    <string name="title_activity_scanner_action">ScannerActionActivity</string>
+
 </resources>
