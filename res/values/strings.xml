@@ -12,6 +12,11 @@
     <string name="splash_message_3_sensor_calibration">Kalibrace senzorových polí</string>
     <string name="splash_message_4_nsa_notification">Notifikace NSA</string>
     <string name="splash_message_5_facebook_scan">Scan FB profilu ředitele XCOM</string>
+    <string name="records_button_label">Záznamy</string>
+    <string name="scanner_button_label">Scanner</string>
+    <string name="sniffer_button_label">Sniffer</string>
+    <string name="research_button_label">Výzkum</string>
+    <string name="upgrades_button_label">Upgrady čtečky</string>
 
     <color name="SplashTextColor">#252525</color>
 
