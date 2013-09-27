@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:textSize="18sp"
-        android:textColor="#252525"
+        android:textColor="@color/SplashTextColor"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:text="@string/splash_message_1_kernel_initialization" />
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:textSize="18sp"
-        android:textColor="#252525"
+        android:textColor="@color/SplashTextColor"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:text="@string/xcom_field_scanner" />

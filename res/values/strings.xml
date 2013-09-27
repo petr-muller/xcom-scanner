@@ -13,6 +13,8 @@
     <string name="splash_message_4_nsa_notification">Notifikace NSA</string>
     <string name="splash_message_5_facebook_scan">Scan FB profilu ředitele XCOM</string>
 
+    <color name="SplashTextColor">#252525</color>
+
     <string name="title_activity_scanner_action">ScannerActionActivity</string>
 
 </resources>
