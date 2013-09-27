@@ -18,5 +18,12 @@ public class ScannerActionActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStart();
+
+		Intent i = getIntent();
+		ScannerAction action = i.getParcelableExtra(ACTIVITY);
+		TextView tv = (TextView) findViewById(R.id.activityFinishedText);
+
+		action.execute();
+		tv.setText(action.getMessage());
 	}
 }
