@@ -19,6 +19,7 @@
     <string name="upgrades_button_label">Upgrady čtečky</string>
 
     <color name="SplashTextColor">#252525</color>
+    <color name="TextBackgroundColor">#C5C5C5</color>
 
     <string name="title_activity_scanner_action">ScannerActionActivity</string>
 
