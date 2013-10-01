@@ -22,5 +22,15 @@
     <color name="TextBackgroundColor">#C5C5C5</color>
 
     <string name="title_activity_scanner_action">ScannerActionActivity</string>
+    <string name="title_activity_record_list">Acquired records</string>
+    <string name="title_activity_record_detail">Record detail</string>
+    <string name="title_activity_reseach">Research</string>
+    <string name="title_activity_research_detail">Research Detail</string>
+    <string name="title_activity_update">Update</string>
+    <string name="title_activity_upgrade">Scanner Upgrades</string>
+    <string name="title_activity_sniffer">Sniffer</string>
+    <string name="pravidla">Pravidla</string>
+    <string name="vyzkoumat">Vyzkoumat</string>
+    <string name="title_activity_scanner_puzzle">Hacking</string>
 
 </resources>

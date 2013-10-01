@@ -1,0 +1,3 @@
+weapons 3
+medic 3
+assault 3

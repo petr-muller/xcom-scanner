@@ -36,6 +36,66 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
         </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.RecordListActivity"
+            android:label="@string/title_activity_record_list"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.RecordDetailActivity"
+            android:label="@string/title_activity_record_detail"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.RecordListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.RecordListActivity" />
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.ReseachActivity"
+            android:label="@string/title_activity_reseach"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.ResearchDetailActivity"
+            android:label="@string/title_activity_research_detail"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.Update"
+            android:label="@string/title_activity_update" >
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.UpgradeActivity"
+            android:label="@string/title_activity_upgrade"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.SnifferActivity"
+            android:label="@string/title_activity_sniffer"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
+        </activity>
+        <activity
+            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerPuzzleActivity"
+            android:label="@string/title_activity_scanner_puzzle"
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
+        </activity>
     </application>
 
 </manifest>

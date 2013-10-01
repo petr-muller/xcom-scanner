@@ -10,7 +10,7 @@
 </shape>
     </item>
     <item>
-		<bitmap android:src="@drawable/xcom_logo_greyed"
-		        android:gravity="center" />
+    <bitmap android:src="@drawable/xcom_logo_greyed"
+      android:gravity="center" />
     </item>
 </layer-list>
