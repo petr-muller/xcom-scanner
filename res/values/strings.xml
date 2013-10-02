@@ -32,5 +32,9 @@
     <string name="pravidla">Pravidla</string>
     <string name="vyzkoumat">Vyzkoumat</string>
     <string name="title_activity_scanner_puzzle">Hacking</string>
+    <string name="research_data_shpref_key">research-data</string>
+    <string name="research_points_shpref_key">research-points</string>
+    <string name="research_points_label">Body výzkumu:</string>
+    <string name="zero_in_string">0</string>
 
 </resources>
