@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import cz.larpy.xcom.fieldscanner_v3.ScannerDbContract.ResearchEntry;
 import android.content.ContentValues;
 import android.content.res.Resources;
+import android.database.Cursor;
 
 public final class ResearchRecord {
   public static final ResearchRecord createFromResources(Resources pResources, String pPkgName, String pTrack, int pLevel, ResearchRecord pDiscovers) {

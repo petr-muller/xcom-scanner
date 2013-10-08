@@ -26,6 +26,12 @@ public final class ScannerDbContract {
     public static final String COLUMN_NAME_LOCKED = "locked";
     public static final String COLUMN_NAME_FLUFF = "fluff";
     public static final String COLUMN_NAME_RULES = "rules";
+    public static String[] getAllColumns() {
+      String[] cols = { COLUMN_NAME_SUMMARY, COLUMN_NAME_TRACK, COLUMN_NAME_LEVEL,
+                        COLUMN_NAME_DISCOVERS, COLUMN_NAME_VISIBLE, COLUMN_NAME_LOCKED,
+                        COLUMN_NAME_FLUFF, COLUMN_NAME_FLUFF };
+      return cols;
+    }
   }
 
   public static abstract class GpsLocation implements BaseColumns {

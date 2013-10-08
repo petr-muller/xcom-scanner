@@ -4,14 +4,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.ArrayAdapter;
 import cz.larpy.xcom.fieldscanner_v3.ScannerDbContract.ResearchEntry;
 
 public class ResearchManager {
+  public class ResearchRecordAdapter extends ArrayAdapter<ResearchRecord> {
+    public ResearchRecordAdapter(Context context, int resource, ResearchRecord[] objects) {
+      super(context, resource, objects);
+    }
+  }
+
   SharedPreferences researchData;
   Context context;
 
@@ -79,5 +88,19 @@ public class ResearchManager {
     editor.commit();
 
     return true;
+  }
+  public ResearchRecordAdapter getVisibleResearch(SQLiteDatabase db) {
+    ArrayList<ResearchRecord> al = new ArrayList<ResearchRecord>();
+
+    String filterByVisible = ScannerDbContract.ResearchEntry.COLUMN_NAME_VISIBLE + " = 1";
+    String orderByTrackAndLevel = ScannerDbContract.ResearchEntry.COLUMN_NAME_TRACK + "," + ScannerDbContract.ResearchEntry.COLUMN_NAME_LEVEL;
+
+    Cursor c = db.query(ScannerDbContract.ResearchEntry.TABLE_NAME, null, filterByVisible,null, null, null, orderByTrackAndLevel);
+    c.moveToFirst();
+    while (! c.isAfterLast()) {
+      ResearchRecord rc = ResearchRecord.createFromCursor(c);
+      al.add(rc);
+    }
+    return new ResearchRecordAdapter(context, 0, (ResearchRecord[])al.toArray());
   }
 }
