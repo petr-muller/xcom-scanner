@@ -3,17 +3,19 @@ package cz.larpy.xcom.fieldscanner_v3;
 import android.provider.BaseColumns;
 
 public final class ScannerDbContract {
-  private ScannerDbContract() {};
+  private ScannerDbContract() {
+  };
 
   public static abstract class RecordEntry implements BaseColumns {
     public static final String TABLE_NAME = "record";
-    public static final String COLUMN_NAME_RECORD_ID = "record_id";
     public static final String COLUMN_NAME_IDENTIFIER = "identifier";
     public static final String COLUMN_NAME_HASTEXT = "has_text";
     public static final String COLUMN_NAME_HASSOUND = "has_sound";
     public static final String COLUMN_NAME_HASIMAGE = "has_image";
     public static final String COLUMN_NAME_LOCKED = "locked";
-    public static final String COLUMN_NAME_WHEN_UNLOCKED = "when_unlocked"; 
+    public static final String COLUMN_NAME_WHEN_UNLOCKED = "when_unlocked";
+    public static final String COLUMN_NAME_SUMMARY = "summary";
+    public static final String COLUMN_NAME_MESSAGE = "message";
   }
 
   public static abstract class ResearchEntry implements BaseColumns {
@@ -26,10 +28,10 @@ public final class ScannerDbContract {
     public static final String COLUMN_NAME_LOCKED = "locked";
     public static final String COLUMN_NAME_FLUFF = "fluff";
     public static final String COLUMN_NAME_RULES = "rules";
+
     public static String[] getAllColumns() {
-      String[] cols = { COLUMN_NAME_SUMMARY, COLUMN_NAME_TRACK, COLUMN_NAME_LEVEL,
-                        COLUMN_NAME_DISCOVERS, COLUMN_NAME_VISIBLE, COLUMN_NAME_LOCKED,
-                        COLUMN_NAME_FLUFF, COLUMN_NAME_FLUFF };
+      String[] cols = { COLUMN_NAME_SUMMARY, COLUMN_NAME_TRACK, COLUMN_NAME_LEVEL, COLUMN_NAME_DISCOVERS,
+          COLUMN_NAME_VISIBLE, COLUMN_NAME_LOCKED, COLUMN_NAME_FLUFF, COLUMN_NAME_FLUFF };
       return cols;
     }
   }
@@ -39,10 +41,15 @@ public final class ScannerDbContract {
     public static final String COLUMN_NAME_SUMMARY = "summary";
     public static final String COLUMN_NAME_LATITUDE = "latitude";
     public static final String COLUMN_NAME_LONGITUDE = "longitude";
-    public static final String COLUMN_NAME_SCANNING_PROFILE = "location";
+    public static final String COLUMN_NAME_SCANNING_PROFILE = "profile";
     public static final String COLUMN_NAME_SCANNING_DURATION = "duration";
     public static final String COLUMN_NAME_START = "start";
-    public static final String COLUMN_NAME_STOP = "stop";
+    public static final String COLUMN_NAME_END = "end";
+    public static final String COLUMN_NAME_OPTIMUM = "optimum";
+    public static final String COLUMN_NAME_TIMED = "timed";
     public static final String COLUMN_NAME_RECORD = "record";
+    public static final String COLUMN_NAME_NEEDED = "needed";
+    public static final String COLUMN_NAME_SNIFFED = "sniffed";
+    public static final String COLUMN_NAME_ID = "identifier";
   }
 }

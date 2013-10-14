@@ -8,7 +8,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/xcom_background"
     android:orientation="vertical"
-    tools:context=".ReseachActivity" >
+    tools:context=".ResearchActivity" >
 
     <LinearLayout android:orientation="horizontal"
         android:layout_height="wrap_content"

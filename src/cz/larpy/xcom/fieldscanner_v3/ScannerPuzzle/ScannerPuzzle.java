@@ -1,4 +1,4 @@
-package cz.larpy.xcom.fieldscanner_v3;
+package cz.larpy.xcom.fieldscanner_v3.ScannerPuzzle;
 
 import java.util.ArrayList;
 import java.util.Collections;

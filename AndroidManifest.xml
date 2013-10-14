@@ -3,6 +3,7 @@
     package="cz.larpy.xcom.fieldscanner_v3"
     android:versionCode="1"
     android:versionName="1.0" >
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -37,7 +38,7 @@
                 android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
         </activity>
         <activity
-            android:name="cz.larpy.xcom.fieldscanner_v3.RecordListActivity"
+            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerRecords.RecordListActivity"
             android:label="@string/title_activity_record_list"
             android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
             <meta-data
@@ -45,15 +46,15 @@
                 android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
         </activity>
         <activity
-            android:name="cz.larpy.xcom.fieldscanner_v3.RecordDetailActivity"
+           android:name="cz.larpy.xcom.fieldscanner_v3.ScannerRecords.RecordDetailActivity"
             android:label="@string/title_activity_record_detail"
-            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.RecordListActivity" >
+            android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.ScannerRecords.RecordListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cz.larpy.xcom.fieldscanner_v3.RecordListActivity" />
         </activity>
         <activity
-            android:name="cz.larpy.xcom.fieldscanner_v3.ReseachActivity"
+            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerResearch.ResearchActivity"
             android:label="@string/title_activity_reseach"
             android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
             <meta-data
@@ -61,7 +62,7 @@
                 android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
         </activity>
         <activity
-            android:name="cz.larpy.xcom.fieldscanner_v3.ResearchDetailActivity"
+            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerResearch.ResearchDetailActivity"
             android:label="@string/title_activity_research_detail"
             android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
             <meta-data

@@ -1,4 +1,4 @@
-package cz.larpy.xcom.fieldscanner_v3;
+package cz.larpy.xcom.fieldscanner_v3.ScannerPuzzle;
 
 import junit.framework.TestCase;
 

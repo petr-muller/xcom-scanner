@@ -1,14 +1,20 @@
-package cz.larpy.xcom.fieldscanner_v3;
+package cz.larpy.xcom.fieldscanner_v3.ScannerActions;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Parcel;
 import android.os.Parcelable;
+import cz.larpy.xcom.fieldscanner_v3.ScannerAction;
+import cz.larpy.xcom.fieldscanner_v3.ScannerDbHelper;
+import cz.larpy.xcom.fieldscanner_v3.ScannerRecords.RecordListActivity;
+import cz.larpy.xcom.fieldscanner_v3.ScannerRecords.RecordManager;
+import cz.larpy.xcom.fieldscanner_v3.ScannerRecords.ScannerRecord;
 
 final public class ScannerActionRecordUnlock extends ScannerAction {
 
-  private String recordIdentifier;
-  private String message =null;
+  private final String recordIdentifier;
+  private String message = null;
 
   public ScannerActionRecordUnlock(String pRecord) {
     super();
@@ -40,7 +46,7 @@ final public class ScannerActionRecordUnlock extends ScannerAction {
 
   @Override
   public void execute(Context context) {
-    RecordManager manager = new RecordManager();
+    RecordManager manager = new RecordManager(context);
     ScannerDbHelper helper = new ScannerDbHelper(context);
     SQLiteDatabase db = helper.getWritableDatabase();
 
@@ -59,5 +65,11 @@ final public class ScannerActionRecordUnlock extends ScannerAction {
     super.writeToParcel(dest, flags);
     dest.writeString(recordIdentifier);
     dest.writeString(message);
+  }
+
+  @Override
+  public Intent getIntent(Context context) {
+    Intent i = new Intent(context, RecordListActivity.class);
+    return i;
   }
 }

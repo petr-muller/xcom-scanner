@@ -3,7 +3,8 @@ package cz.larpy.xcom.fieldscanner_v3;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ScannerActionActivity extends Activity {
@@ -18,6 +19,8 @@ public class ScannerActionActivity extends Activity {
     if (savedInstanceState != null) {
       savedAction = (ScannerAction) savedInstanceState.getParcelable(ACTIVITY);
     }
+    Button OK = (Button) findViewById(R.id.OK);
+    OK.setOnClickListener(goToIntent);
   }
 
   @Override
@@ -39,6 +42,15 @@ public class ScannerActionActivity extends Activity {
   @Override
   protected void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
-    outState.putParcelable(ACTIVITY, (Parcelable) savedAction);
+    outState.putParcelable(ACTIVITY, savedAction);
   }
+
+  private final Button.OnClickListener goToIntent = new Button.OnClickListener() {
+
+    @Override
+    public void onClick(View v) {
+      Intent i = savedAction.getIntent(ScannerActionActivity.this);
+      startActivity(i);
+    }
+  };
 }

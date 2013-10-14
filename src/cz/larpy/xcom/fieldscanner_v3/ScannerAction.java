@@ -1,11 +1,13 @@
 package cz.larpy.xcom.fieldscanner_v3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public abstract class ScannerAction implements Parcelable {
   public abstract String getMessage();
+
   public void execute(Context context) {
     executed = true;
   }
@@ -14,7 +16,8 @@ public abstract class ScannerAction implements Parcelable {
     executed = (parcel.readInt() != 0);
   }
 
-  protected ScannerAction() {}
+  protected ScannerAction() {
+  }
 
   public static final Parcelable.Creator<ScannerAction> CREATOR = new Creator<ScannerAction>() {
     @Override
@@ -29,6 +32,7 @@ public abstract class ScannerAction implements Parcelable {
   };
 
   private boolean executed = false;
+
   public boolean notYetExecuted() {
     return (executed == false);
   }
@@ -37,4 +41,6 @@ public abstract class ScannerAction implements Parcelable {
   public void writeToParcel(Parcel dest, int flags) {
     dest.writeInt(executed ? 1 : 0);
   }
+
+  public abstract Intent getIntent(Context context);
 }

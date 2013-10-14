@@ -36,5 +36,16 @@
     <string name="research_points_shpref_key">research-points</string>
     <string name="research_points_label">Body výzkumu:</string>
     <string name="zero_in_string">0</string>
+    <string name="rychlost_snifferu_">Rychlost snifferu:</string>
+    <string name="seznam_upgrad_">Seznam upgradů:</string>
+    <string name="research_icon">Research Icon</string>
+    <string name="x_com_sniffer">X-COM Sniffer</string>
+    <string name="stav_">Stav:</string>
+    <string name="s_la_sign_lu_">"Síla signálu: "</string>
+    <string name="zb_v_s_">"Zbývá [s]: "</string>
+    <string name="vzd_lenost_od_zdroje_">"Vzdálenost od zdroje: "</string>
+    <string name="_asov_modifik_tor_">"Časový modifikátor: "</string>
+    <string name="p_ehr_t_z_znam">Přehrát záznam</string>
+    <string name="obrazov_z_znam">Obrazový záznam</string>
 
 </resources>
