@@ -23,3 +23,6 @@ local.properties
 ic_launcher.png
 xcom_logo.png
 xcom_logo_greyed.png
+
+res/raw/*
+res/drawable/*
