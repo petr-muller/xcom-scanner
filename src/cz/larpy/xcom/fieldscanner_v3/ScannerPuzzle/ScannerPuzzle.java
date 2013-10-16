@@ -6,27 +6,39 @@ import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public final class ScannerPuzzle {
-  private int width;
-  private int heigth;
-  private Code code1;
-  private Code code2;
-  private Item[][] matrix1;
-  private Item[][] matrix2;
+  private final int width;
+  private final int heigth;
+  private final Code code1;
+  private final Code code2;
+  private final Item[][] matrix1;
+  private final Item[][] matrix2;
+  private final String password1;
+  private final String password2;
 
   private final SortedSet<Item> itemset = new TreeSet<Item>();
 
-  public ScannerPuzzle(ArrayList<Item> items, int pW, int pH, Code pCode1, Code pCode2) {
+  public ScannerPuzzle(List<Item> items, int pW, int pH, Code pCode1, Code pCode2, String pPass1, String pPass2) {
     itemset.addAll(items);
     if ((pW * pH) > items.size()) {
       throw new AssertionError("ScannerPuzzle: resulting matrix contains more elements than item set");
     }
+
+    password1 = pPass1;
+    password2 = pPass2;
 
     width = pW;
     heigth = pH;
 
     SortedSet<Item> matrixItems = new TreeSet<Item>();
     matrixItems.addAll(itemset);
+
+    matrix1 = new Item[heigth][width];
+    matrix2 = new Item[heigth][width];
+
     for (int row = 0; row < pH; row++) {
       for (int col = 0; col < pW; col++) {
         matrix1[row][col] = matrixItems.first();
@@ -84,17 +96,37 @@ public final class ScannerPuzzle {
   public boolean matchCode2(Code pCode) {
     return code2.matches(pCode);
   }
+
+  public String getPassword1() {
+    return password1;
+  }
+
+  public String getPassword2() {
+    return password2;
+  }
 }
 
 final class Code {
-  private List<Coords> code = new ArrayList<Coords>();
+  @Override
+  public String toString() {
+    return "Code [code=" + code + "]";
+  }
 
-  public Code(List <Coords> pCode) {
+  private final List<Coords> code = new ArrayList<Coords>();
+
+  public Code(List<Coords> pCode) {
     code.addAll(pCode);
+  }
+
+  public Code() {
   }
 
   public List<Coords> getCode() {
     return Collections.unmodifiableList(code);
+  }
+
+  public int getLength() {
+    return code.size();
   }
 
   public boolean matches(Code other) {
@@ -103,17 +135,44 @@ final class Code {
     }
 
     for (int i = 0; i < code.size(); i++) {
-      if (code.get(i) != other.code.get(i)){
+      if (!code.get(i).equals(other.code.get(i))) {
         return false;
       }
     }
     return true;
   }
+
+  public void append(Coords coord) {
+    code.add(coord);
+  }
+
+  public void clear() {
+    code.clear();
+  }
 }
 
-final class Coords {
+final class Coords implements Parcelable {
+  @Override
+  public String toString() {
+    return "Coords [X=" + X + ", Y=" + Y + "]";
+  }
+
   private final int X;
   private final int Y;
+
+  public static final Parcelable.Creator<Coords> CREATOR = new Parcelable.Creator<Coords>() {
+
+    @Override
+    public Coords createFromParcel(Parcel in) {
+      return new Coords(in);
+    }
+
+    @Override
+    public Coords[] newArray(int size) {
+      return new Coords[size];
+    }
+
+  };
 
   @Override
   public int hashCode() {
@@ -152,10 +211,31 @@ final class Coords {
     X = x;
     Y = y;
   }
+
+  public Coords(Parcel in) {
+    X = in.readInt();
+    Y = in.readInt();
+  }
+
+  @Override
+  public int describeContents() {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel dest, int flags) {
+    dest.writeInt(X);
+    dest.writeInt(Y);
+  }
 }
 
-final class Item {
+final class Item implements Comparable<Item> {
   private final char C;
+
+  @Override
+  public String toString() {
+    return "Item [C=" + C + "]";
+  }
 
   public Item(char c) {
     C = c;
@@ -181,5 +261,14 @@ final class Item {
     if (C != other.C)
       return false;
     return true;
+  }
+
+  @Override
+  public int compareTo(Item another) {
+    return (Character.valueOf(C)).compareTo(Character.valueOf(another.C));
+  }
+
+  public String getLabel() {
+    return String.valueOf(C);
   }
 }

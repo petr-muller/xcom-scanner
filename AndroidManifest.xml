@@ -90,7 +90,7 @@
                 android:value="cz.larpy.xcom.fieldscanner_v3.HubActivity" />
         </activity>
         <activity
-            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerPuzzleActivity"
+            android:name="cz.larpy.xcom.fieldscanner_v3.ScannerPuzzle.ScannerPuzzleActivity"
             android:label="@string/title_activity_scanner_puzzle"
             android:parentActivityName="cz.larpy.xcom.fieldscanner_v3.HubActivity" >
             <meta-data

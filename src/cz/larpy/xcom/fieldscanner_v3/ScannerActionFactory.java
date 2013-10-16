@@ -1,9 +1,11 @@
 package cz.larpy.xcom.fieldscanner_v3;
 
 import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionDatabase;
+import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionHack;
 import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionRecordUnlock;
 import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionResearchPoint;
 import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionScannerUpgrade;
+import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionUnknown;
 import cz.larpy.xcom.fieldscanner_v3.ScannerActions.ScannerActionUpgradeClear;
 import cz.larpy.xcom.fieldscanner_v3.ScannerUpgrade.ScannerUpgrade;
 import cz.larpy.xcom.fieldscanner_v3.ScannerUpgrade.ScannerUpgradeSnifferSpeed;
@@ -20,6 +22,8 @@ final public class ScannerActionFactory {
 
   private static final String RESEARCH = "RESEARCH";
   private static final String RESPOINT = "POINT";
+
+  private static final String HACK = "HACK";
 
   public static ScannerAction createScannerAction(String pCommand) {
     String[] commandArray = pCommand.split(" ");
@@ -52,6 +56,13 @@ final public class ScannerActionFactory {
         String research_point_key = commandArray[2];
         action = new ScannerActionResearchPoint(research_point_key);
       }
+    } else if (command.equals(HACK)) {
+      int hack_id = Integer.valueOf(commandArray[1]);
+      String hack_side = commandArray[2];
+      String hack_summary = commandArray[3];
+      action = new ScannerActionHack(hack_id, hack_side, hack_summary);
+    } else {
+      action = new ScannerActionUnknown();
     }
 
     return action;
